@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		8A8DFD2A29954E8D00631688 /* RidesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8DFD2929954E8D00631688 /* RidesApp.swift */; };
-		8A8DFD2C29954E8D00631688 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8DFD2B29954E8D00631688 /* ContentView.swift */; };
 		8A8DFD2E29954E9000631688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A8DFD2D29954E9000631688 /* Assets.xcassets */; };
 		8A8DFD3129954E9000631688 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A8DFD3029954E9000631688 /* Preview Assets.xcassets */; };
 		8A8DFD3B29954E9000631688 /* RidesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8DFD3A29954E9000631688 /* RidesTests.swift */; };
 		8A8DFD4529954E9000631688 /* RidesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8DFD4429954E9000631688 /* RidesUITests.swift */; };
 		8A8DFD4729954E9000631688 /* RidesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8DFD4629954E9000631688 /* RidesUITestsLaunchTests.swift */; };
+		8A8DFD5A299555E100631688 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8DFD59299555E100631688 /* Vehicle.swift */; };
+		8A8DFD5C2995560800631688 /* VehicleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8DFD5B2995560800631688 /* VehicleViewModel.swift */; };
+		8A8DFD5E2995563400631688 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8DFD5D2995563400631688 /* NetworkManager.swift */; };
+		8A8DFD612995566700631688 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8DFD602995566700631688 /* Constant.swift */; };
+		8A8DFD632995578400631688 /* VehicleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8DFD622995578400631688 /* VehicleListView.swift */; };
+		8A8DFD652995D88C00631688 /* VehicleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8DFD642995D88C00631688 /* VehicleDetailView.swift */; };
+		8A8DFD6729999CD700631688 /* MakeVinRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8DFD6629999CD700631688 /* MakeVinRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +42,6 @@
 /* Begin PBXFileReference section */
 		8A8DFD2629954E8D00631688 /* Rides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rides.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A8DFD2929954E8D00631688 /* RidesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidesApp.swift; sourceTree = "<group>"; };
-		8A8DFD2B29954E8D00631688 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8A8DFD2D29954E9000631688 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A8DFD3029954E9000631688 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8A8DFD3629954E9000631688 /* RidesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RidesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +49,13 @@
 		8A8DFD4029954E9000631688 /* RidesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RidesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A8DFD4429954E9000631688 /* RidesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidesUITests.swift; sourceTree = "<group>"; };
 		8A8DFD4629954E9000631688 /* RidesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8A8DFD59299555E100631688 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		8A8DFD5B2995560800631688 /* VehicleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleViewModel.swift; sourceTree = "<group>"; };
+		8A8DFD5D2995563400631688 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8A8DFD602995566700631688 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		8A8DFD622995578400631688 /* VehicleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListView.swift; sourceTree = "<group>"; };
+		8A8DFD642995D88C00631688 /* VehicleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailView.swift; sourceTree = "<group>"; };
+		8A8DFD6629999CD700631688 /* MakeVinRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeVinRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +106,10 @@
 		8A8DFD2829954E8D00631688 /* Rides */ = {
 			isa = PBXGroup;
 			children = (
+				8A8DFD552995553400631688 /* Vehicle */,
+				8A8DFD542995552700631688 /* NetworkManager */,
+				8A8DFD532995551E00631688 /* Utils */,
 				8A8DFD2929954E8D00631688 /* RidesApp.swift */,
-				8A8DFD2B29954E8D00631688 /* ContentView.swift */,
 				8A8DFD2D29954E9000631688 /* Assets.xcassets */,
 				8A8DFD2F29954E9000631688 /* Preview Content */,
 			);
@@ -125,6 +139,58 @@
 				8A8DFD4629954E9000631688 /* RidesUITestsLaunchTests.swift */,
 			);
 			path = RidesUITests;
+			sourceTree = "<group>";
+		};
+		8A8DFD532995551E00631688 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8A8DFD602995566700631688 /* Constant.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8A8DFD542995552700631688 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				8A8DFD5D2995563400631688 /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		8A8DFD552995553400631688 /* Vehicle */ = {
+			isa = PBXGroup;
+			children = (
+				8A8DFD582995555600631688 /* Views */,
+				8A8DFD572995554C00631688 /* Models */,
+				8A8DFD562995554200631688 /* ViewModels */,
+			);
+			path = Vehicle;
+			sourceTree = "<group>";
+		};
+		8A8DFD562995554200631688 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8A8DFD5B2995560800631688 /* VehicleViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8A8DFD572995554C00631688 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8A8DFD59299555E100631688 /* Vehicle.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8A8DFD582995555600631688 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8A8DFD622995578400631688 /* VehicleListView.swift */,
+				8A8DFD642995D88C00631688 /* VehicleDetailView.swift */,
+				8A8DFD6629999CD700631688 /* MakeVinRowView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +323,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A8DFD2C29954E8D00631688 /* ContentView.swift in Sources */,
+				8A8DFD652995D88C00631688 /* VehicleDetailView.swift in Sources */,
+				8A8DFD5A299555E100631688 /* Vehicle.swift in Sources */,
+				8A8DFD5C2995560800631688 /* VehicleViewModel.swift in Sources */,
+				8A8DFD5E2995563400631688 /* NetworkManager.swift in Sources */,
+				8A8DFD632995578400631688 /* VehicleListView.swift in Sources */,
+				8A8DFD6729999CD700631688 /* MakeVinRowView.swift in Sources */,
 				8A8DFD2A29954E8D00631688 /* RidesApp.swift in Sources */,
+				8A8DFD612995566700631688 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
