@@ -58,22 +58,25 @@ struct VehicleListView: View {
                 
                 
                 ScrollView(showsIndicators: false){
+                    
+                    // I have choose LazyVStack because of large dataset. Only load the views that are currently visible, resulting in faster and smoother scrolling, as well as reduced memory usage
                     LazyVStack(alignment: .leading,spacing: 0) {
-                        Text("\(String(format: Constant.vehicles, vehicleVM.sortOption.rawValue).uppercased())")
-                            .font(.subheadline).foregroundColor(Color.gray)
-                            .lineLimit(1)
-                            .padding(.vertical)
                         
-                        Divider()
-                        
-                        ForEach(vehicleVM.allVehicles, id: \.id) { item in
-                            NavigationLink(destination: VehicleDetailView(vehicle: item)) {
-                                MakeVinRowView(item: item)
-                            }.buttonStyle(PlainButtonStyle())
-                           
-
-                     
+                        if !vehicleVM.allVehicles.isEmpty {
+                            Text("\(String(format: Constant.vehicles, vehicleVM.sortOption.rawValue).uppercased())")
+                                .font(.subheadline).foregroundColor(Color.gray)
+                                .lineLimit(1)
+                                .padding(.vertical)
+                            
+                            Divider()
+                            
+                            ForEach(vehicleVM.allVehicles, id: \.id) { item in NavigationLink(destination: VehiclePageView(vehicle: item)
+                                ) {
+                                    MakeVinRowView(item: item)
+                                }.buttonStyle(PlainButtonStyle())
+                               }
                         }
+                        
                         
                     }//LazyVStack
                     .padding(.horizontal,16)
@@ -92,6 +95,7 @@ struct VehicleListView: View {
                 
             }//VStack
             .navigationTitle(Constant.findVehicles)
+            .alert(vehicleVM.alertTitle, isPresented: $vehicleVM.showAlert) {}
             
             
         }//NavigationView

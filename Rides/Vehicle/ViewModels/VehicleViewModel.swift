@@ -9,34 +9,39 @@ import Foundation
 import SwiftUI
 
 class VehicleViewModel: ObservableObject {
-    
  
     var networkManager: NetworkManager
     @Published var allVehicles: [Vehicle] = []
-    @Published var numberVehicle = ""
-    @Published var isLoading = false
+    @Published var numberVehicle: String = ""
     @Published var sortOption: SortOption = .vin
-       
+    
+    //for alert
+    @Published var showAlert = false
+    @Published var alertTitle = ""
+    
+    //API loading state
+    @Published var isLoading = false
+    
        //MARK: - Init
        init(networkManager: NetworkManager) {
            self.networkManager = networkManager
-           
-           Task{
-               await getVehicles(size: Int(numberVehicle) ?? 10)
-           }
        }
        
     //MARK: - API - Get Vehicles
     @MainActor
     func getVehicles(size: Int = 10) async{
+        
+        let isValidate = validate(input: Int(numberVehicle) ?? 0)
+        if isValidate == false {
+            self.alertTitle = Constant.invalidInputMessage
+            self.showAlert = true
+            return
+        }
         isLoading = true
         
-        ///Construct url
+        //Construct url
         let url = String(format: Constant.vehiclesUrl, size)
-        
-        
             do{
-            
                 let result: [Vehicle] = try await networkManager.fetch(from: url)
                 
                 if sortOption.rawValue == "VIN" {
@@ -67,6 +72,28 @@ class VehicleViewModel: ObservableObject {
         self.allVehicles = self.allVehicles.sorted(by: { $0.vin < $1.vin})
     }
     
+    func validate(input: Int?) -> Bool {
+        guard let input = input else {
+                    return false
+                }
+                //Check and return valid or not
+                let minInputVal = 1
+                let maxInputVal = 100
+                let validRange = minInputVal...maxInputVal
+                return validRange.contains(input)
+    }
+    
+    
+    func estimateCarbonEmissions(kilometrage: Int) -> String {
+        let thresholdValue = 5000
+        if kilometrage <= thresholdValue {
+            return String(kilometrage)
+        } else {
+            //Extra emission for each kilometer after the threshold value 5000
+            let extraKilometer = Double(kilometrage - thresholdValue)
+            return String(thresholdValue + Int(extraKilometer * 1.5))
+        }
+    }
    
     
     func colorToUse(_ color: String) -> Color {

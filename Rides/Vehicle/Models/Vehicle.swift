@@ -12,7 +12,7 @@ struct Vehicle: Codable {
     let vin: String
     let carType: String
     let makeAndModel, color: String?
-    let kilometrage: Int?
+    let kilometrage: Int
    
     
     enum CodingKeys: String, CodingKey {

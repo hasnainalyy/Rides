@@ -20,6 +20,9 @@
 		8A8DFD632995578400631688 /* VehicleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8DFD622995578400631688 /* VehicleListView.swift */; };
 		8A8DFD652995D88C00631688 /* VehicleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8DFD642995D88C00631688 /* VehicleDetailView.swift */; };
 		8A8DFD6729999CD700631688 /* MakeVinRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8DFD6629999CD700631688 /* MakeVinRowView.swift */; };
+		8A8DFD69299ABE9E00631688 /* CarbonEmissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8DFD68299ABE9E00631688 /* CarbonEmissionView.swift */; };
+		8A8DFD6C299AF5EF00631688 /* VehiclePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8DFD6B299AF5EF00631688 /* VehiclePageView.swift */; };
+		8A8DFD6E299B479800631688 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8DFD6D299B479800631688 /* PageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 		8A8DFD622995578400631688 /* VehicleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListView.swift; sourceTree = "<group>"; };
 		8A8DFD642995D88C00631688 /* VehicleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailView.swift; sourceTree = "<group>"; };
 		8A8DFD6629999CD700631688 /* MakeVinRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeVinRowView.swift; sourceTree = "<group>"; };
+		8A8DFD68299ABE9E00631688 /* CarbonEmissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonEmissionView.swift; sourceTree = "<group>"; };
+		8A8DFD6B299AF5EF00631688 /* VehiclePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclePageView.swift; sourceTree = "<group>"; };
+		8A8DFD6D299B479800631688 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,11 +192,22 @@
 		8A8DFD582995555600631688 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8A8DFD6A299AF59200631688 /* Components */,
 				8A8DFD622995578400631688 /* VehicleListView.swift */,
 				8A8DFD642995D88C00631688 /* VehicleDetailView.swift */,
-				8A8DFD6629999CD700631688 /* MakeVinRowView.swift */,
+				8A8DFD68299ABE9E00631688 /* CarbonEmissionView.swift */,
+				8A8DFD6B299AF5EF00631688 /* VehiclePageView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8A8DFD6A299AF59200631688 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8A8DFD6629999CD700631688 /* MakeVinRowView.swift */,
+				8A8DFD6D299B479800631688 /* PageView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,10 +341,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A8DFD652995D88C00631688 /* VehicleDetailView.swift in Sources */,
+				8A8DFD69299ABE9E00631688 /* CarbonEmissionView.swift in Sources */,
+				8A8DFD6E299B479800631688 /* PageView.swift in Sources */,
 				8A8DFD5A299555E100631688 /* Vehicle.swift in Sources */,
 				8A8DFD5C2995560800631688 /* VehicleViewModel.swift in Sources */,
 				8A8DFD5E2995563400631688 /* NetworkManager.swift in Sources */,
 				8A8DFD632995578400631688 /* VehicleListView.swift in Sources */,
+				8A8DFD6C299AF5EF00631688 /* VehiclePageView.swift in Sources */,
 				8A8DFD6729999CD700631688 /* MakeVinRowView.swift in Sources */,
 				8A8DFD2A29954E8D00631688 /* RidesApp.swift in Sources */,
 				8A8DFD612995566700631688 /* Constant.swift in Sources */,

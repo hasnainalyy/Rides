@@ -23,8 +23,9 @@ struct Constant {
     static let carType = "Car Type"
     static let VIN = "VIN"
     static let sortBy = "Sort By"
-    
-   
+    static let invalidInputMessage = "Please enter a value between 1 and 100"
+    static let emissionDetails = "Emission Details"
+    static let estimatedCarbonEmission = "Estimated Carbon Emission"
     
     
 }

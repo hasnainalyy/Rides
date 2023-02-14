@@ -9,28 +9,62 @@ import XCTest
 @testable import Rides
 
 final class RidesTests: XCTestCase {
+    
+    
+    var vehicleViewModel: VehicleViewModel!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        vehicleViewModel = VehicleViewModel(networkManager: NetworkManager.sharedManager)
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        vehicleViewModel = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    //MARK: - Test for Inputfield validation
+    func testWhenInputIsInValidRange() throws {
+      
+        let input = 50
+        let result = vehicleViewModel.validate(input: input)
+        XCTAssertTrue(result, "Expected true when input is in valid range")
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testWhenInputIsLessThanValidRange() throws {
+    
+        let input = 0
+        let result = vehicleViewModel.validate(input: input)
+        XCTAssertFalse(result, "Expected false when input is less than valid range")
+    }
+    
+    func testWhenInputIsNil() throws {
+    
+        let result = vehicleViewModel.validate(input: nil)
+        XCTAssertFalse(result, "Expected false when input is nil")
     }
 
+    func testWhenInputIsGreaterThanValidRange() throws {
+    
+        let input = 101
+        let result = vehicleViewModel.validate(input: input)
+        XCTAssertFalse(result, "Expected false when input is greater than valid range")
+    }
+    
+    //MARK: - Test for Emission calculation
+    
+    func testCalculateCarbonEmissionForLessThan5000Kilometres() throws {
+        //Expected emission calculation for kilometrage till 5000
+        let expectedEmissionTillThreshold = String(5000)
+        let carbonEmission = vehicleViewModel.estimateCarbonEmissions(kilometrage: 4000)
+        XCTAssertEqual(carbonEmission,expectedEmissionTillThreshold)
+     }
+     
+     func testCalculateCarbonEmissionForMoreThan5000Kilometres() throws {
+        //Expected emission calculation for kilometrage beyond 5000
+        let expectedEmissionBeyondThreshold = String(5000 + Int(1000 * 1.5))
+        let carbonEmission = vehicleViewModel.estimateCarbonEmissions(kilometrage: 6000)
+        XCTAssertEqual(carbonEmission,expectedEmissionBeyondThreshold)
+     }
+    
+    
+    
 }
