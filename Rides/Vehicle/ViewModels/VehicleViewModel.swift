@@ -3,7 +3,6 @@
 //  Rides
 //
 //  Created by Ali Hussain on 2023-02-09.
-//
 
 import Foundation
 import SwiftUI
@@ -11,6 +10,10 @@ import SwiftUI
 class VehicleViewModel: ObservableObject {
  
     var networkManager: NetworkManager
+    //MARK: - Init
+    init(networkManager: NetworkManager) {
+        self.networkManager = networkManager
+    }
     @Published var allVehicles: [Vehicle] = []
     @Published var numberVehicle: String = ""
     @Published var sortOption: SortOption = .vin
@@ -22,16 +25,13 @@ class VehicleViewModel: ObservableObject {
     //API loading state
     @Published var isLoading = false
     
-       //MARK: - Init
-       init(networkManager: NetworkManager) {
-           self.networkManager = networkManager
-       }
        
     //MARK: - API - Get Vehicles
+    /// - Main actor is used to update UI on main thread
     @MainActor
-    func getVehicles(size: Int = 10) async{
+    func getVehicles(size: Int) async{
         
-        let isValidate = validate(input: Int(numberVehicle) ?? 0)
+        let isValidate = validate(input: Int(numberVehicle))
         if isValidate == false {
             self.alertTitle = Constant.invalidInputMessage
             self.showAlert = true
@@ -60,18 +60,19 @@ class VehicleViewModel: ObservableObject {
             }
         }
         
-    // sorting function for carType
+    //MARK: - Sorting function for carType
     func sortByCarType(){
         sortOption = .carType
         self.allVehicles = self.allVehicles.sorted(by: { $0.carType < $1.carType})
     }
     
-    // sorting function for VIN
+    //MARK: - Sorting function for VIN
     func sortByVin(){
         sortOption = .vin
         self.allVehicles = self.allVehicles.sorted(by: { $0.vin < $1.vin})
     }
     
+    //MARK: - Input value validation
     func validate(input: Int?) -> Bool {
         guard let input = input else {
                     return false
@@ -83,7 +84,7 @@ class VehicleViewModel: ObservableObject {
                 return validRange.contains(input)
     }
     
-    
+    //MARK: - Calculate Carbon Emission
     func estimateCarbonEmissions(kilometrage: Int) -> String {
         let thresholdValue = 5000
         if kilometrage <= thresholdValue {
@@ -95,7 +96,7 @@ class VehicleViewModel: ObservableObject {
         }
     }
    
-    
+    //This function is use to show the color of a vehicle in the round circle. It has more colors in API but I have set limited colors to it and if no color is found then by default it will show gray color.
     func colorToUse(_ color: String) -> Color {
         switch color {
         case "Blue":

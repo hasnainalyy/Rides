@@ -32,19 +32,19 @@ struct VehicleDetailView: View {
                             Image("car")
                                 .resizable()
                                 .scaledToFit()
-                            
-//                            Image(systemName: "arrow.right.circle.fill")
-//                                .resizable()
-//                                .frame(width: 32,height: 32)
-                              
+                                                   
                         
                             
                             HStack{
                                 
                                 if let color = vehicle.color {
                                     Circle()
+                                        .stroke(Color.black, lineWidth: 1)
+                                          .background(Circle().fill(vehicleVM.colorToUse(color)))
                                         .frame(width: 24,height: 24)
-                                        .foregroundColor(vehicleVM.colorToUse(color))
+                                 
+                                     
+                                        
                                 }
                               
                                 Text(vehicle.color ?? "N/A")
